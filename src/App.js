@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import JokeList from './containers/JokeList';
+
 import logo from './logo.svg';
 import './App.css';
+
+const NotFound = () => (
+  <p>404:( Page not Found</p>
+)
+
 
 class App extends Component {
   render() {
@@ -11,15 +19,16 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
         </header>
+
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={JokeList} />
+            {/* And other pages go on */}
+            <Route component={NotFound} />
+          </Switch>
+        </BrowserRouter>
+
       </div>
     );
   }
