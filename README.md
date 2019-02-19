@@ -20,3 +20,9 @@ npm run start
 ```
 
 Then you should see some funny jokes from Chuck Norris
+
+## Issues
+
+### Module can not found 'react'
+
+If you this error, please see Dan's [solution](https://github.com/facebook/create-react-app/issues/2534#issuecomment-308533496).
